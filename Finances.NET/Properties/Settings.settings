@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Finanser.NET.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Lang" Type="System.Globalization.CultureInfo" Scope="User">
+      <Value Profile="(Default)">en-US</Value>
+    </Setting>
+    <Setting Name="DefaultCurrency" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SEK</Value>
+    </Setting>
+    <Setting Name="MinPasswordLength" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="Iterations" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10000</Value>
+    </Setting>
+    <Setting Name="SaltBitSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">64</Value>
+    </Setting>
+    <Setting Name="KeyBitSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">256</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

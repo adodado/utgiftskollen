@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="C6B467D1-0A49-4295-8DF1-782EA92B1054" Name="Finances.NET" Language="1033" Version="1.0.0.0" Manufacturer="Admir Cosic" UpgradeCode="5F997BB3-872B-4596-B953-FEA8B81508F7">
+    <Package Description="Test file in a Product" Comments="Simple test" InstallerVersion="200" Compressed="yes" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="simple.cab" EmbedCab="yes" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="FINANCES.NET" Name="Finances.NET">
+          <Component Id="DOCUMENTFORMAT.OPENXML.DLL" DiskId="1" Guid="AB62DE0C-BDD3-47DA-8D76-84AED4D82D4D">
+            <File Id="DOCUMENTFORMAT.OPENXML.DLL" Name="DocumentFormat.OpenXml.dll" Source="..\Finances.NET\bin\Debug\DocumentFormat.OpenXml.dll" />
+          </Component>
+          <Component Id="EPPLUS.DLL" DiskId="1" Guid="F1585558-EA5E-478C-8C4B-F6EE9528EC97">
+            <File Id="EPPLUS.DLL" Name="EPPlus.dll" Source="..\Finances.NET\bin\Debug\EPPlus.dll" />
+          </Component>
+          <Component Id="FINANCES.NET.PLUGINCONTRACT.DLL" DiskId="1" Guid="E906BCE1-8E36-45E2-AC52-0A370F0F9D49">
+            <File Id="FINANCES.NET.PLUGINCONTRACT.DLL" Name="Finances.NET.PluginContract.dll" Source="..\Finances.NET\bin\Debug\Finances.NET.PluginContract.dll" />
+          </Component>
+          <Component Id="FINANCES.NET.UTILS.DLL" DiskId="1" Guid="61C0C8BD-8663-4B94-A5E4-DB60015B6215">
+            <File Id="FINANCES.NET.UTILS.DLL" Name="Finances.NET.Utils.dll" Source="..\Finances.NET\bin\Debug\Finances.NET.Utils.dll" />
+          </Component>
+          <Component Id="FINANCES.NET.CORE.DLL" DiskId="1" Guid="899D826E-3C70-4629-B118-57FBE4746740">
+            <File Id="FINANCES.NET.CORE.DLL" Name="Finances.NET.Core.dll" Source="..\Finances.NET\bin\Debug\Finances.NET.Core.dll" />
+          </Component>
+          <Component Id="FINANCE.NET.EXE" DiskId="1" Guid="F544D517-995F-49D7-A1A1-7262A7DA4F97">
+            <File Id="FINANCE.NET.EXE" Name="Finance.NET.exe" Source="..\Finances.NET\bin\Debug\Finance.NET.exe">
+              <Shortcut Id="desktopShortcut" Directory="DesktopFolder" Name="Finances" WorkingDirectory="INSTALLDIR" Advertise="yes" Icon="DesktopIcon.exe" IconIndex="0" />
+              <Shortcut Id="ExeShortcut" Directory="ProgramMenuDir" Name="Finances" Advertise="yes" Icon="StartMenuIcon.exe" IconIndex="0" />
+            </File>
+          </Component>
+          <Component Id="OOKII.DIALOGS.DLL" DiskId="1" Guid="97E8485B-5E3E-487D-ACE0-B49780D5607E">
+            <File Id="OOKII.DIALOGS.DLL" Name="Ookii.Dialogs.dll" Source="..\Finances.NET\bin\Debug\Ookii.Dialogs.dll" />
+          </Component>
+          <!--<Component Id="ZEDGRAPH.DLL" DiskId="1" Guid="11FA8F61-8667-4DB5-BA41-35DE720B8416">
+            <File Id="ZEDGRAPH.DLL" Name="ZedGraph.dll" Source="..\Finances.NET\bin\Debug\ZedGraph.dll" />
+          </Component>
+          <Component Id="ZEDGRAPH.RESOURCES.DLL" DiskId="1" Guid="9AA0ADB8-C6EB-4236-80E2-E39AD4305937">
+            <File Id="ZEDGRAPH.RESOURCES.DLL" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\ZedGraph.resources.dll" />
+          </Component>
+          <Directory Id="DE" Name="de">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_1" DiskId="1" Guid="AE4D3B56-1BD9-4B82-82FD-9BE90453D4E3">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_1" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\de\ZedGraph.resources.dll" />
+            </Component>-->
+          <!--</Directory>-->
+          <Directory Id="DE_DE" Name="de-DE">
+            <Component Id="GERMAN_LANGUAGE_PACK" DiskId="1" Guid="19E31F1E-1AB8-47E0-BE6E-13B7B4FB853C">
+              <File Id="GERMAN_LANGUAGE_PACK" Name="Finance.NET.resources.dll" Source="..\Finances.NET\bin\Debug\de-DE\Finance.NET.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="EN_US" Name="en-US">
+            <Component Id="ENGLISH_LANGUAGE_PACK" DiskId="1" Guid="542C594E-9D91-4477-9994-B7C1BA24833C">
+              <File Id="ENGLISH_LANGUAGE_PACK" Name="Finance.NET.resources.dll" Source="..\Finances.NET\bin\Debug\en-US\Finance.NET.resources.dll" />
+            </Component>
+          </Directory>
+          <!--<Directory Id="ES" Name="es">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_2" DiskId="1" Guid="43FB1D00-CFCF-4EDE-AF10-572EC1D1311F">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_2" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\es\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="FR" Name="fr">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_3" DiskId="1" Guid="1D0EEF14-5DD9-45B0-A3C2-9FE2E8427D0A">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_3" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\fr\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="HU" Name="hu">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_4" DiskId="1" Guid="ECBBAF6F-440D-49F5-834E-B26398ECE079">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_4" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\hu\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="IT" Name="it">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_5" DiskId="1" Guid="04DD2DBC-A780-45EE-B9F0-50F27D3710DE">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_5" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\it\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="JA" Name="ja">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_6" DiskId="1" Guid="C5C95AFA-E2AB-417B-B525-5BC8EF7EB631">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_6" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\ja\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="PT" Name="pt">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_7" DiskId="1" Guid="2F058351-A903-4108-8A40-56A97F8978D9">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_7" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\pt\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="RU" Name="ru">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_8" DiskId="1" Guid="108055AA-A82E-48C1-902F-397900586B51">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_8" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\ru\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="SK" Name="sk">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_9" DiskId="1" Guid="4E6F85C2-AD14-4CD1-BD90-5C69BD60E1ED">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_9" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\sk\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="SV" Name="sv">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_10" DiskId="1" Guid="3B3585DA-D993-4A82-AE7C-79567242F207">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_10" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\sv\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="TR" Name="tr">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_11" DiskId="1" Guid="8E2387F1-8DD0-401B-BD1A-E300A4056CEB">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_11" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\tr\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="ZH_CN" Name="zh-cn">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_12" DiskId="1" Guid="34701E82-C4BA-4573-84DD-06AD8344CB08">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_12" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\zh-cn\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>
+          <Directory Id="ZH_TW" Name="zh-tw">
+            <Component Id="ZEDGRAPH.RESOURCES.DLL_13" DiskId="1" Guid="68E5F815-8DBE-44A0-898C-CFB31E61D269">
+              <File Id="ZEDGRAPH.RESOURCES.DLL_13" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\zh-tw\ZedGraph.resources.dll" />
+            </Component>
+          </Directory>-->
+          <Directory Id="PLUGINS" Name="plugins">
+            <Component Id="FINANCES.NET.CORE.DLL2" DiskId="1" Guid="9BDD8CE9-1D25-4374-AA94-DDE7D17CD417">
+              <File Id="FINANCES.NET.CORE.DLL2" Name="Finances.NET.Core.dll" Source="..\Finances.NET\bin\Debug\plugins\Finances.NET.Core.dll" />
+            </Component>
+            <Component Id="FINANCES.NET.LINECHART.PLUGIN.DLL" DiskId="1" Guid="40D877F9-90B8-4EBB-810F-9BEF1D8D340A">
+              <File Id="FINANCES.NET.LINECHART.PLUGIN.DLL" Name="Finances.NET.LineChart.Plugin.dll" Source="..\Finances.NET\bin\Debug\plugins\Finances.NET.LineChart.Plugin.dll" />
+            </Component>
+            <Component Id="FINANCES.NET.PIE.PLUGIN.DLL" DiskId="1" Guid="E6DE406F-B8F3-4C5E-8128-45CA69BE83CA">
+              <File Id="FINANCES.NET.PIE.PLUGIN.DLL" Name="Finances.NET.Pie.Plugin.dll" Source="..\Finances.NET\bin\Debug\plugins\Finances.NET.Pie.Plugin.dll" />
+            </Component>
+            <Component Id="FINANCES.NET.PLUGINCONTRACT.DLL2" DiskId="1" Guid="23236C7C-B487-4112-BB45-A91135005000">
+              <File Id="FINANCES.NET.PLUGINCONTRACT.DLL2" Name="Finances.NET.PluginContract.dll" Source="..\Finances.NET\bin\Debug\plugins\Finances.NET.PluginContract.dll" />
+            </Component>
+            <Component Id="FINANCES.NET.TRANSACTIONSREPORT.PLUGIN.DLL" DiskId="1" Guid="32A94BD3-01E9-45CD-AE8A-4D96067B281E">
+              <File Id="FINANCES.NET.TRANSACTIONSREPORT.PLUGIN.DLL" Name="Finances.NET.TransactionsReport.Plugin.dll" Source="..\Finances.NET\bin\Debug\plugins\Finances.NET.TransactionsReport.Plugin.dll" />
+            </Component>
+            <Component Id="ZEDGRAPH.DLL2" DiskId="1" Guid="6CD41004-A1C8-4FF6-A7E9-99AFDDEEAE35">
+              <File Id="ZEDGRAPH.DLL2" Name="ZedGraph.dll" Source="..\Finances.NET\bin\Debug\plugins\ZedGraph.dll" />
+            </Component>
+            <Directory Id="DE2" Name="de">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL2" DiskId="1" Guid="A2CC46D5-39A6-40ED-B10C-313F1F4CAA74">
+                <File Id="ZEDGRAPH.RESOURCES.DLL2" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\de\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="DE_DE2" Name="de-DE">
+              <Component Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL" DiskId="1" Guid="0F719450-A07E-428E-A9F5-FD139A390ED4">
+                <File Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL" Name="Finances.NET.LineChart.Plugin.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\de-DE\Finances.NET.LineChart.Plugin.resources.dll" />
+              </Component>
+              <Component Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL" DiskId="1" Guid="FE79BFEF-55A5-4A27-BE97-D415CFB4C452">
+                <File Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL" Name="Finances.NET.Pie.Plugin.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\de-DE\Finances.NET.Pie.Plugin.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="EN_US2" Name="en-US">
+              <Component Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL_1" DiskId="1" Guid="9BED4B64-83A3-4B5C-82B9-17167300C5EB">
+                <File Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL_1" Name="Finances.NET.LineChart.Plugin.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\en-US\Finances.NET.LineChart.Plugin.resources.dll" />
+              </Component>
+              <Component Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL_1" DiskId="1" Guid="CF13B173-AF26-44FE-8384-5DF52941425A">
+                <File Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL_1" Name="Finances.NET.Pie.Plugin.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\en-US\Finances.NET.Pie.Plugin.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="ES2" Name="es">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_1111" DiskId="1" Guid="6B724E22-88D9-465E-8984-F3C5739E1C00">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_1111" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\es\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="FR2" Name="fr">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_22" DiskId="1" Guid="EFBADA69-8E6B-49FE-8DC5-7661325F985F">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_22" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\fr\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="HU2" Name="hu">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_33" DiskId="1" Guid="CCDCED31-A139-440C-8548-EC71C70085E5">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_33" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\hu\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="IT2" Name="it">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_44" DiskId="1" Guid="2DDA804E-171F-4EF1-B465-77701D84B980">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_44" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\it\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="JA2" Name="ja">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_55" DiskId="1" Guid="B3358864-2FD5-4823-B5CC-0246760A53A0">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_55" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\ja\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="PT2" Name="pt">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_66" DiskId="1" Guid="691B1C18-1DF3-483B-9FC7-9974A48829A5">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_66" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\pt\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="RU2" Name="ru">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_77" DiskId="1" Guid="41CAC90C-9C2B-49BF-A394-8786A9DA9645">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_77" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\ru\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="SK2" Name="sk">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_88" DiskId="1" Guid="57CCCFFD-1DD5-4C6F-9F59-B516DE49CC62">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_88" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\sk\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="SV2" Name="sv">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_99" DiskId="1" Guid="70B7A226-52F7-4C66-A6E3-A5A01D1E839B">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_99" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\sv\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="TR2" Name="tr">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_100" DiskId="1" Guid="99F1E2B7-F941-4C4E-A1B2-1D10C3E0EA84">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_100" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\tr\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="ZH_CN2" Name="zh-cn">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_111" DiskId="1" Guid="88F57626-9124-4869-9C63-5B87CAD4AA83">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_111" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\zh-cn\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="ZH_TW2" Name="zh-tw">
+              <Component Id="ZEDGRAPH.RESOURCES.DLL_122" DiskId="1" Guid="7381EBD2-7D2E-4A0C-AA32-B46585849539">
+                <File Id="ZEDGRAPH.RESOURCES.DLL_122" Name="ZedGraph.resources.dll" Source="..\Finances.NET\bin\Debug\plugins\zh-tw\ZedGraph.resources.dll" />
+              </Component>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <Directory Id="DesktopFolder" />
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ProgramMenuDir" Name="Finances.NET">
+          <Component Id="StartMenuShortcuts" Guid="2665F015-DDB0-4FB2-B348-EFB52FF30A4E">
+            <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" />
+            <Shortcut Id="UninstallProduct" Name="Uninstall" Description="Uninstalls the application" Target="[System64Folder]msiexec.exe" Arguments="/x [ProductCode]" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Feature Id="DefaultFeature" Title="Main Feature" Level="1">
+      <ComponentRef Id="DOCUMENTFORMAT.OPENXML.DLL" />
+      <ComponentRef Id="EPPLUS.DLL" />
+      <ComponentRef Id="FINANCE.NET.EXE" />
+      <ComponentRef Id="FINANCES.NET.PLUGINCONTRACT.DLL" />
+      <ComponentRef Id="FINANCES.NET.UTILS.DLL"/>
+      <ComponentRef Id="FINANCES.NET.CORE.DLL" />
+      <ComponentRef Id="OOKII.DIALOGS.DLL" />
+      <!--<ComponentRef Id="ZEDGRAPH.DLL" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_1" />-->
+      <ComponentRef Id="GERMAN_LANGUAGE_PACK" />
+      <ComponentRef Id="ENGLISH_LANGUAGE_PACK" />
+      <!--<ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_2" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_3" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_4" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_5" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_6" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_7" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_8" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_9" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_10" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_11" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_12" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_13" />-->
+      <ComponentRef Id="FINANCES.NET.CORE.DLL2" />
+      <ComponentRef Id="FINANCES.NET.LINECHART.PLUGIN.DLL" />
+      <ComponentRef Id="FINANCES.NET.PIE.PLUGIN.DLL" />
+      <ComponentRef Id="FINANCES.NET.PLUGINCONTRACT.DLL2" />
+      <ComponentRef Id="FINANCES.NET.TRANSACTIONSREPORT.PLUGIN.DLL" />
+      <ComponentRef Id="ZEDGRAPH.DLL2" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL2" />
+      <ComponentRef Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL" />
+      <ComponentRef Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL" />
+      <ComponentRef Id="FINANCES.NET.LINECHART.PLUGIN.RESOURCES.DLL_1" />
+      <ComponentRef Id="FINANCES.NET.PIE.PLUGIN.RESOURCES.DLL_1" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_1111" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_22" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_33" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_44" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_55" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_66" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_77" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_88" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_99" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_100" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_111" />
+      <ComponentRef Id="ZEDGRAPH.RESOURCES.DLL_122" />
+      <ComponentRef Id="StartMenuShortcuts" />
+    </Feature>
+    <UI />
+    <UIRef Id="WixUI_Minimal" />
+    <PropertyRef Id="NETFRAMEWORK35" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    <Condition Message="This application requires .NET Framework X.Y or newer.">Installed OR NETFRAMEWORK35</Condition>
+    <Icon Id="DesktopIcon.exe" SourceFile="..\Finances.NET\bin\Debug\Finance.NET.exe" />
+    <Icon Id="StartMenuIcon.exe" SourceFile="..\Finances.NET\bin\Debug\Finance.NET.exe" />
+  </Product>
+</Wix>
